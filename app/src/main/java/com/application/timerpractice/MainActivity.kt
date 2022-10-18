@@ -80,6 +80,10 @@ fun TimerScreen() {
         )
 
         Button(onClick = {
+
+            if (snackbarHostState.currentSnackbarData != null){
+                return@Button
+            }
             if (timerCount == 0) {
 
                 coroutinScope.launch {
